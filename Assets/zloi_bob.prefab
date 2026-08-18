@@ -98,10 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc56e7c1421ac1489c1252a233bcaba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bob_Contro
-  _serchLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  _agent: {fileID: -1528344472878258171}
 --- !u!195 &-1528344472878258171
 NavMeshAgent:
   m_ObjectHideFlags: 0

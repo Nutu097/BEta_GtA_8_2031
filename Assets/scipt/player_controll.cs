@@ -8,19 +8,14 @@ public class player_controll : MonoBehaviour
 
 	[SerializeField] private float _walkSpeed = 2f;
 	[SerializeField] private float _runSpeed = 5f;
-	[SerializeField] private int _hp = 5;
-	public bool IsAlive => _hp > 0;
-	public int Hp => _hp;
-
 	
-    private Vector3 _moveVector3;
+
+	private Vector3 _moveVector3;
 	
 
 
 	private bool _isRunning;
-    private bool _isSetDown;
-
-    private float cordz;
+	private float cordz;
 	private float cordx;
 
 	private Vector3 _moveVector;
@@ -78,18 +73,8 @@ public class player_controll : MonoBehaviour
 
 	}
 	
-	public void TakeDamage(int damage)
-    {
 
-		if (!IsAlive)
-		{
-			Debug.Log("Player is dead");
-            return;
-        }
-		Debug.Log(" damage");
-        _hp -= damage;
-    }
-    private void ReadShiftInput(bool isPressed)
+	private void ReadShiftInput(bool isPressed)
 	{
 		_isRunning = isPressed;
 	}
@@ -126,15 +111,7 @@ public class player_controll : MonoBehaviour
 		RaycastHit hit;
 		if (Physics.Raycast(_shutPoint.position, transform.forward, out hit, _shutRange))
 		{
-			//var enemy = hit.collider.gameObject.GetComponent<Bob_Contro>();
-			if (hit.collider.gameObject.TryGetComponent<Bob_Contro>(out Bob_Contro enemy))
-			{
-				if (enemy.isAlive) return;
-                {
-                    enemy.TakeDamage(1);
-                }
-            }
-			//Debug.Log(hit.collider.gameObject.name);
+			Debug.Log(hit.collider.gameObject.name);
         }
     }
 #if UNITY_EDITOR
